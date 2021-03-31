@@ -145,6 +145,11 @@ public class gyakoroltat extends javax.swing.JFrame {
         mnuFeladatok.add(mnuKivonas);
 
         mnuSzorzas.setText("Szorzás");
+        mnuSzorzas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuSzorzasActionPerformed(evt);
+            }
+        });
         mnuFeladatok.add(mnuSzorzas);
 
         mnuOsztas.setText("Osztás");
@@ -178,6 +183,10 @@ public class gyakoroltat extends javax.swing.JFrame {
     private void mnuOsszeadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuOsszeadasActionPerformed
         
     }//GEN-LAST:event_mnuOsszeadasActionPerformed
+
+    private void mnuSzorzasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSzorzasActionPerformed
+        //valami
+    }//GEN-LAST:event_mnuSzorzasActionPerformed
 
     public static void main(String args[]) {
 
