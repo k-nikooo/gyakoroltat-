@@ -72,7 +72,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="47" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -94,7 +94,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                          <Component id="lblFeladat" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblMuvelet" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -105,7 +105,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lblFeladat" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMuvelet" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -123,11 +123,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblMuvelet" min="-2" pref="110" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblFeladat" min="-2" pref="103" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="spValasz" min="-2" pref="74" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                      <Component id="lblMegoldas" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblEredmeny" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -137,9 +137,9 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblMuvelet" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="spValasz" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblMegoldas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEredmeny" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblFeladat" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -157,14 +157,14 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblMegoldas">
+            <Component class="javax.swing.JLabel" name="lblEredmeny">
               <Properties>
                 <Property name="text" type="java.lang.String" value="j&#xf3; / rossz"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblMuvelet">
+            <Component class="javax.swing.JLabel" name="lblFeladat">
               <Properties>
-                <Property name="text" type="java.lang.String" value="M&#xfc;velet"/>
+                <Property name="text" type="java.lang.String" value="Feladat"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -221,6 +221,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ellen&#x151;rz&#xe9;s"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEllenorzesActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMegoldas">
               <Properties>
@@ -229,9 +232,9 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="lblFeladat">
+        <Component class="javax.swing.JLabel" name="lblMuvelet">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Feladat"/>
+            <Property name="text" type="java.lang.String" value="M&#xfc;velet"/>
           </Properties>
         </Component>
       </SubComponents>
