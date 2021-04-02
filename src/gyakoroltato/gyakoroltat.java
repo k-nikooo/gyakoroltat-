@@ -155,9 +155,19 @@ public class gyakoroltat extends javax.swing.JFrame {
         mnuFeladatok.add(mnuOsszeadas);
 
         mnuKivonas.setText("Kivonas");
+        mnuKivonas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuKivonasActionPerformed(evt);
+            }
+        });
         mnuFeladatok.add(mnuKivonas);
 
         mnuSzorzas.setText("Szorzás");
+        mnuSzorzas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuSzorzasActionPerformed(evt);
+            }
+        });
         mnuFeladatok.add(mnuSzorzas);
 
         mnuOsztas.setText("Osztás");
@@ -203,6 +213,15 @@ public class gyakoroltat extends javax.swing.JFrame {
             lblEredmeny.setText("Rossz válasz!");
         }
     }//GEN-LAST:event_btnEllenorzesActionPerformed
+
+    private void mnuSzorzasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSzorzasActionPerformed
+        //valami
+    }//GEN-LAST:event_mnuSzorzasActionPerformed
+
+    private void mnuKivonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuKivonasActionPerformed
+        // 
+    }//GEN-LAST:event_mnuKivonasActionPerformed
+
 
     public static void main(String args[]) {
 
