@@ -215,7 +215,11 @@ public class gyakoroltat extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEllenorzesActionPerformed
 
     private void mnuSzorzasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSzorzasActionPerformed
-        //valami
+      lblMuvelet.setText("Szorzás:");
+        szam1 = round(szam.nextInt(50));
+        szam2 = round(szam.nextInt(50));
+        lblFeladat.setText("Mennyi: "+ szam1 + "*" + szam2 + "=");
+        eredmeny = szam1*szam2;
     }//GEN-LAST:event_mnuSzorzasActionPerformed
 
     private void mnuKivonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuKivonasActionPerformed
