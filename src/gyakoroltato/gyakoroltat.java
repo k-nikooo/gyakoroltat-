@@ -1,7 +1,7 @@
 package gyakoroltato;
 
 public class gyakoroltat extends javax.swing.JFrame {
-
+    
     public gyakoroltat() {
         initComponents();
     }
@@ -194,7 +194,7 @@ public class gyakoroltat extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuSzorzasActionPerformed
 
     private void mnuKivonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuKivonasActionPerformed
-        // TODO add your handling code here:
+        lblFeladat.setText("Kivonás");
     }//GEN-LAST:event_mnuKivonasActionPerformed
 
     public static void main(String args[]) {
