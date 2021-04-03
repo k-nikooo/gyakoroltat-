@@ -1,7 +1,18 @@
 package gyakoroltato;
 
+
+
+    
+
+import static java.lang.Math.round;
+import java.util.Random;
+
 public class gyakoroltat extends javax.swing.JFrame {
     
+    Random szam = new Random();
+    int szam1 = 0;
+    int szam2 = 0;
+    int eredmeny = 0;
     public gyakoroltat() {
         initComponents();
     }
@@ -13,14 +24,14 @@ public class gyakoroltat extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         spValasz = new javax.swing.JSpinner();
-        lblMegoldas = new javax.swing.JLabel();
-        lblMuvelet = new javax.swing.JLabel();
+        lblEredmeny = new javax.swing.JLabel();
+        lblFeladat = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnBefejez = new javax.swing.JButton();
         btnUj = new javax.swing.JButton();
         btnEllenorzes = new javax.swing.JButton();
         btnMegoldas = new javax.swing.JButton();
-        lblFeladat = new javax.swing.JLabel();
+        lblMuvelet = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnuFeladatok = new javax.swing.JMenu();
         mnuOsszeadas = new javax.swing.JMenuItem();
@@ -33,9 +44,9 @@ public class gyakoroltat extends javax.swing.JFrame {
         spValasz.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
         spValasz.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        lblMegoldas.setText("jó / rossz");
+        lblEredmeny.setText("jó / rossz");
 
-        lblMuvelet.setText("Müvelet");
+        lblFeladat.setText("Feladat");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -43,21 +54,20 @@ public class gyakoroltat extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblMuvelet, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblFeladat, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(spValasz, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addComponent(lblMegoldas)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(lblEredmeny, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblMuvelet)
                     .addComponent(spValasz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMegoldas))
+                    .addComponent(lblEredmeny)
+                    .addComponent(lblFeladat))
                 .addContainerGap())
         );
 
@@ -66,6 +76,11 @@ public class gyakoroltat extends javax.swing.JFrame {
         btnUj.setText("Új");
 
         btnEllenorzes.setText("Ellenőrzés");
+        btnEllenorzes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEllenorzesActionPerformed(evt);
+            }
+        });
 
         btnMegoldas.setText("Megoldás");
 
@@ -101,7 +116,7 @@ public class gyakoroltat extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        lblFeladat.setText("Feladat");
+        lblMuvelet.setText("Művelet");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -116,14 +131,14 @@ public class gyakoroltat extends javax.swing.JFrame {
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(153, 153, 153)
-                        .addComponent(lblFeladat)))
+                        .addComponent(lblMuvelet)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblFeladat)
+                .addComponent(lblMuvelet)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -133,7 +148,7 @@ public class gyakoroltat extends javax.swing.JFrame {
 
         mnuFeladatok.setText("Feladatok");
 
-        mnuOsszeadas.setText("Összeadas");
+        mnuOsszeadas.setText("Összeadás");
         mnuOsszeadas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuOsszeadasActionPerformed(evt);
@@ -141,7 +156,7 @@ public class gyakoroltat extends javax.swing.JFrame {
         });
         mnuFeladatok.add(mnuOsszeadas);
 
-        mnuKivonas.setText("Kivonas");
+        mnuKivonas.setText("Kivonás");
         mnuKivonas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuKivonasActionPerformed(evt);
@@ -178,7 +193,7 @@ public class gyakoroltat extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -186,16 +201,42 @@ public class gyakoroltat extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnuOsszeadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuOsszeadasActionPerformed
-        
+        lblMuvelet.setText("Összeadás:");
+        szam1 = round(szam.nextInt(50));
+        szam2 = round(szam.nextInt(50));
+        lblFeladat.setText("Mennyi: "+ szam1 + "+" + szam2 + "=");
+        eredmeny = szam1+szam2;
     }//GEN-LAST:event_mnuOsszeadasActionPerformed
 
+    private void btnEllenorzesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEllenorzesActionPerformed
+        if(eredmeny == (int)spValasz.getValue()){
+            lblEredmeny.setText("Jó válasz!");
+        } else {
+            lblEredmeny.setText("Rossz válasz!");
+        }
+    }//GEN-LAST:event_btnEllenorzesActionPerformed
+
     private void mnuSzorzasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSzorzasActionPerformed
-        //valami
+      lblMuvelet.setText("Szorzás:");
+        szam1 = round(szam.nextInt(10)+1);
+        szam2 = round(szam.nextInt(10)+1);
+        lblFeladat.setText("Mennyi: "+ szam1 + "*" + szam2 + "=");
+        eredmeny = szam1*szam2;
     }//GEN-LAST:event_mnuSzorzasActionPerformed
 
     private void mnuKivonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuKivonasActionPerformed
-        lblFeladat.setText("Kivonás");
+        lblMuvelet.setText("Kivonás:");
+        szam1 = round(szam.nextInt(100));
+        szam2 = round(szam.nextInt(100));        
+        if(szam2>szam1){
+            int seged=szam2;
+            szam2=szam1;
+            szam1=szam2;
+        }
+        lblFeladat.setText("Mennyi: "+ szam1 + "-" + szam2 + "=");
+        eredmeny=szam1-szam2;
     }//GEN-LAST:event_mnuKivonasActionPerformed
+
 
     public static void main(String args[]) {
 
@@ -215,8 +256,8 @@ public class gyakoroltat extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblEredmeny;
     private javax.swing.JLabel lblFeladat;
-    private javax.swing.JLabel lblMegoldas;
     private javax.swing.JLabel lblMuvelet;
     private javax.swing.JMenu mnuFeladatok;
     private javax.swing.JMenuItem mnuKivonas;
