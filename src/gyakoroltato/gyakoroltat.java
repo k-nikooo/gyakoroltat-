@@ -173,6 +173,11 @@ public class gyakoroltat extends javax.swing.JFrame {
         mnuFeladatok.add(mnuSzorzas);
 
         mnuOsztas.setText("Osztás");
+        mnuOsztas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuOsztasActionPerformed(evt);
+            }
+        });
         mnuFeladatok.add(mnuOsztas);
 
         jMenuBar1.add(mnuFeladatok);
@@ -236,6 +241,14 @@ public class gyakoroltat extends javax.swing.JFrame {
         lblFeladat.setText("Mennyi: "+ szam1 + "-" + szam2 + "=");
         eredmeny=szam1-szam2;
     }//GEN-LAST:event_mnuKivonasActionPerformed
+
+    private void mnuOsztasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuOsztasActionPerformed
+        lblMuvelet.setText("Osztás:");
+        szam1 = round(szam.nextInt(10)+1);
+        szam2 = round(szam.nextInt(10)+1);
+        lblFeladat.setText("Mennyi: "+ szam1 + "%" + szam2 + "=");
+        eredmeny = szam1%szam2;
+    }//GEN-LAST:event_mnuOsztasActionPerformed
 
 
     public static void main(String args[]) {
