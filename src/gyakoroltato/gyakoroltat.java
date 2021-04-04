@@ -255,4 +255,6 @@ public class gyakoroltat extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnuSzorzas;
     private javax.swing.JSpinner spValasz;
     // End of variables declaration//GEN-END:variables
+
+   
 }
