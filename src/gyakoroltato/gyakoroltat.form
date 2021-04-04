@@ -11,7 +11,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuOsszeadas">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#xd6;sszeadas"/>
+                <Property name="text" type="java.lang.String" value="&#xd6;sszead&#xe1;s"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuOsszeadasActionPerformed"/>
@@ -19,7 +19,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuKivonas">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Kivonas"/>
+                <Property name="text" type="java.lang.String" value="Kivon&#xe1;s"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuKivonasActionPerformed"/>
@@ -37,6 +37,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Oszt&#xe1;s"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuOsztasActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -132,9 +135,8 @@
                       <Component id="lblFeladat" min="-2" pref="103" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="spValasz" min="-2" pref="74" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                      <Component id="lblEredmeny" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <Component id="lblEredmeny" min="-2" pref="79" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -222,6 +224,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xda;j"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUjActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEllenorzes">
               <Properties>
@@ -240,7 +245,7 @@
         </Container>
         <Component class="javax.swing.JLabel" name="lblMuvelet">
           <Properties>
-            <Property name="text" type="java.lang.String" value="M&#xfc;velet"/>
+            <Property name="text" type="java.lang.String" value="M&#x171;velet"/>
           </Properties>
         </Component>
       </SubComponents>

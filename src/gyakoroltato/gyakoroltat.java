@@ -4,12 +4,13 @@ import static java.lang.Math.round;
 import java.util.Random;
 
 public class gyakoroltat extends javax.swing.JFrame {
-    
+
     Random szam = new Random();
     int szam1 = 0;
     int szam2 = 0;
     int eredmeny = 0;
-    
+    String muvelet = "";
+
     public gyakoroltat() {
         initComponents();
     }
@@ -54,9 +55,8 @@ public class gyakoroltat extends javax.swing.JFrame {
                 .addComponent(lblFeladat, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(spValasz, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addComponent(lblEredmeny)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(lblEredmeny, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,6 +72,11 @@ public class gyakoroltat extends javax.swing.JFrame {
         btnBefejez.setText("Befejezés");
 
         btnUj.setText("Új");
+        btnUj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUjActionPerformed(evt);
+            }
+        });
 
         btnEllenorzes.setText("Ellenőrzés");
         btnEllenorzes.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +119,7 @@ public class gyakoroltat extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        lblMuvelet.setText("Müvelet");
+        lblMuvelet.setText("Művelet");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -146,7 +151,7 @@ public class gyakoroltat extends javax.swing.JFrame {
 
         mnuFeladatok.setText("Feladatok");
 
-        mnuOsszeadas.setText("Összeadas");
+        mnuOsszeadas.setText("Összeadás");
         mnuOsszeadas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuOsszeadasActionPerformed(evt);
@@ -154,7 +159,7 @@ public class gyakoroltat extends javax.swing.JFrame {
         });
         mnuFeladatok.add(mnuOsszeadas);
 
-        mnuKivonas.setText("Kivonas");
+        mnuKivonas.setText("Kivonás");
         mnuKivonas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuKivonasActionPerformed(evt);
@@ -171,6 +176,11 @@ public class gyakoroltat extends javax.swing.JFrame {
         mnuFeladatok.add(mnuSzorzas);
 
         mnuOsztas.setText("Osztás");
+        mnuOsztas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuOsztasActionPerformed(evt);
+            }
+        });
         mnuFeladatok.add(mnuOsztas);
 
         jMenuBar1.add(mnuFeladatok);
@@ -200,14 +210,13 @@ public class gyakoroltat extends javax.swing.JFrame {
 
     private void mnuOsszeadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuOsszeadasActionPerformed
         lblMuvelet.setText("Összeadás:");
-        szam1 = round(szam.nextInt(50));
-        szam2 = round(szam.nextInt(50));
-        lblFeladat.setText("Mennyi: "+ szam1 + "+" + szam2 + "=");
-        eredmeny = szam1+szam2;
+        muveletKivalaszto();
+        lblFeladat.setText("Mennyi: " + szam1 + muvelet + szam2 + "=");
+       
     }//GEN-LAST:event_mnuOsszeadasActionPerformed
 
     private void btnEllenorzesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEllenorzesActionPerformed
-        if(eredmeny == (int)spValasz.getValue()){
+        if (eredmeny == (int) spValasz.getValue()) {
             lblEredmeny.setText("Jó válasz!");
         } else {
             lblEredmeny.setText("Rossz válasz!");
@@ -215,17 +224,62 @@ public class gyakoroltat extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEllenorzesActionPerformed
 
     private void mnuSzorzasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSzorzasActionPerformed
-      lblMuvelet.setText("Szorzás:");
-        szam1 = round(szam.nextInt(10)+1);
-        szam2 = round(szam.nextInt(10)+1);
-        lblFeladat.setText("Mennyi: "+ szam1 + "*" + szam2 + "=");
-        eredmeny = szam1*szam2;
+        lblMuvelet.setText("Szorzás:");
+        muveletKivalaszto();
+        lblFeladat.setText("Mennyi: " + szam1 + muvelet + szam2 + "=");
+        
     }//GEN-LAST:event_mnuSzorzasActionPerformed
 
     private void mnuKivonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuKivonasActionPerformed
-        // 
+        lblMuvelet.setText("Kivonás:");
+        muveletKivalaszto();
+        lblFeladat.setText("Mennyi: " + szam1 + muvelet + szam2 + "=");
+        
     }//GEN-LAST:event_mnuKivonasActionPerformed
 
+    private void mnuOsztasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuOsztasActionPerformed
+        lblMuvelet.setText("Osztás:");
+        muveletKivalaszto();
+        lblFeladat.setText("Mennyi: " + szam1 + muvelet + szam2 + "=");
+        
+    }//GEN-LAST:event_mnuOsztasActionPerformed
+
+    private void btnUjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUjActionPerformed
+        muveletKivalaszto();
+        lblFeladat.setText("Mennyi: " + szam1 + muvelet + szam2 + "=");
+    }//GEN-LAST:event_btnUjActionPerformed
+    private void muveletKivalaszto() {
+        if (lblMuvelet.getText() == "Osztás:") {
+            szam1 = round(szam.nextInt(100));
+            szam2 = round(szam.nextInt(99)+1);
+            while(szam1%szam2 != 0){//osztható számokat kapjunk
+                szam2 = round(szam.nextInt(99)+1);
+            }
+            muvelet = "%";
+            eredmeny = szam1 / szam2;//csak egész számokat osztunk,az egész része kell nekünk
+
+        }
+        if (lblMuvelet.getText() == "Kivonás:") {
+            szam1 = round(szam.nextInt(100));
+            szam2 = round(szam.nextInt(szam1));//szam1-ből maximum saját maga vonható ki pozitív eredmény miatt
+            muvelet = "-";
+            eredmeny = szam1 - szam2;
+        }
+        if (lblMuvelet.getText() == "Összeadás:") {
+            szam1 = round(szam.nextInt(100));
+            szam2 = round(szam.nextInt(100-szam1));//az eredmény ne legyen nagyobb 100-nál
+            muvelet = "+";
+            eredmeny = szam1 + szam2;
+        }
+        if (lblMuvelet.getText() == "Szorzás:") {
+            szam1 = round(szam.nextInt(25)+1);
+            szam2 = round(szam.nextInt(100/szam1));
+            muvelet = "*";
+            eredmeny = szam1 * szam2;
+           
+        }
+        spValasz.setValue(0);
+    }
 
     public static void main(String args[]) {
 
@@ -256,5 +310,4 @@ public class gyakoroltat extends javax.swing.JFrame {
     private javax.swing.JSpinner spValasz;
     // End of variables declaration//GEN-END:variables
 
-   
 }
