@@ -223,7 +223,7 @@ public class gyakoroltat extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuSzorzasActionPerformed
 
     private void mnuKivonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuKivonasActionPerformed
-        // 
+        //
     }//GEN-LAST:event_mnuKivonasActionPerformed
 
 
