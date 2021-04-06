@@ -87,6 +87,11 @@ public class gyakoroltat extends javax.swing.JFrame {
         });
 
         btnMegoldas.setText("Megoldás");
+        btnMegoldas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMegoldasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -150,8 +155,10 @@ public class gyakoroltat extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        mnuFeladatok.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gyakoroltato/muveletek.jpg"))); // NOI18N
         mnuFeladatok.setText("Feladatok");
 
+        mnuOsszeadas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gyakoroltato/osszeadas.jpg"))); // NOI18N
         mnuOsszeadas.setText("Összeadás");
         mnuOsszeadas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,6 +167,7 @@ public class gyakoroltat extends javax.swing.JFrame {
         });
         mnuFeladatok.add(mnuOsszeadas);
 
+        mnuKivonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gyakoroltato/kivonas.jpg"))); // NOI18N
         mnuKivonas.setText("Kivonás");
         mnuKivonas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +176,7 @@ public class gyakoroltat extends javax.swing.JFrame {
         });
         mnuFeladatok.add(mnuKivonas);
 
+        mnuSzorzas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gyakoroltato/szorzas.jpg"))); // NOI18N
         mnuSzorzas.setText("Szorzás");
         mnuSzorzas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,6 +185,7 @@ public class gyakoroltat extends javax.swing.JFrame {
         });
         mnuFeladatok.add(mnuSzorzas);
 
+        mnuOsztas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gyakoroltato/osztas.jpg"))); // NOI18N
         mnuOsztas.setText("Osztás");
         mnuOsztas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,6 +265,13 @@ public class gyakoroltat extends javax.swing.JFrame {
         muveletKivalaszto();
         lblFeladat.setText("Mennyi: " + szam1 + muvelet + szam2 + " =");
     }//GEN-LAST:event_btnUjActionPerformed
+
+    private void btnMegoldasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMegoldasActionPerformed
+        if (lblMuvelet.getText()!="Művelet") {
+            String szoveg = "A helyes megoldás:\n"+szam1+muvelet+szam2+" = "+eredmeny;
+            JOptionPane.showMessageDialog(this, szoveg, "", JOptionPane.INFORMATION_MESSAGE);
+        }        
+    }//GEN-LAST:event_btnMegoldasActionPerformed
     private void muveletKivalaszto() {
         if (lblMuvelet.getText() == "Osztás:") {
             szam1 = round(szam.nextInt(100));

@@ -6,11 +6,17 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="mnuFeladatok">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/gyakoroltato/muveletek.jpg"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Feladatok"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuOsszeadas">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/gyakoroltato/osszeadas.jpg"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="&#xd6;sszead&#xe1;s"/>
               </Properties>
               <Events>
@@ -19,6 +25,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuKivonas">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/gyakoroltato/kivonas.jpg"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Kivon&#xe1;s"/>
               </Properties>
               <Events>
@@ -27,6 +36,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuSzorzas">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/gyakoroltato/szorzas.jpg"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Szorz&#xe1;s"/>
               </Properties>
               <Events>
@@ -35,6 +47,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnuOsztas">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/gyakoroltato/osztas.jpg"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Oszt&#xe1;s"/>
               </Properties>
               <Events>
@@ -240,6 +255,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Megold&#xe1;s"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMegoldasActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
