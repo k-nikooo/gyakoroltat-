@@ -255,13 +255,13 @@ public class gyakoroltat extends javax.swing.JFrame {
             while(szam1%szam2 != 0){//osztható számokat kapjunk
                 szam2 = round(szam.nextInt(99)+1);
             }
-            muvelet = "%";
+            muvelet = "/";
             eredmeny = szam1 / szam2;//csak egész számokat osztunk,az egész része kell nekünk
 
         }
         if (lblMuvelet.getText() == "Kivonás:") {
             szam1 = round(szam.nextInt(100));
-            szam2 = round(szam.nextInt(szam1));//szam1-ből maximum saját maga vonható ki pozitív eredmény miatt
+            szam2 = round(szam.nextInt(szam1));//szam1-ból maximum saját maga vonható ki pozitív eredmény miatt
             muvelet = "-";
             eredmeny = szam1 - szam2;
         }
